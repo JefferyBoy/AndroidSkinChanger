@@ -37,23 +37,20 @@ public class SkinViewCreateFactory2 implements LayoutInflater.Factory2 {
         LayoutInflater.Factory2 compatFactory2 = ac == null ? null : ac.getCompatDelegateViewFactory2();
         try {
             if (name.indexOf('.') == -1) {
-                if (name.equals("View") || name.equals("ViewStub")) {
-                    if (compatFactory2 != null) {
-                        view = compatFactory2.onCreateView(name, context, attrs);
-                    } else {
+                if (compatFactory2 != null) {
+                    view = compatFactory2.onCreateView(name, context, attrs);
+                }
+                if (view == null) {
+                    if (name.equals("View") || name.equals("ViewStub")) {
                         view = LayoutInflater.from(context).createView(name, "android.view.", attrs);
-                    }
-                } else {
-                    if (compatFactory2 != null) {
-                        view = compatFactory2.onCreateView(name, context, attrs);
-                    }
-                    if (view == null) {
+                    } else {
                         view = LayoutInflater.from(context).createView(name, "android.widget.", attrs);
-                    }
-                    if (view == null) {
-                        view = LayoutInflater.from(context).createView(name, "android.webkit.", attrs);
+                        if (view == null) {
+                            view = LayoutInflater.from(context).createView(name, "android.webkit.", attrs);
+                        }
                     }
                 }
+
             } else {
                 if (compatFactory2 != null) {
                     view = compatFactory2.onCreateView(name, context, attrs);
