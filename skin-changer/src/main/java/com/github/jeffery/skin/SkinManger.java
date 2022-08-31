@@ -9,8 +9,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
-import android.graphics.Color;
-import android.graphics.RegionIterator;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,7 +26,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.Stack;
@@ -346,6 +343,6 @@ public class SkinManger extends SkinActivityLifecycleCallback {
 
     @Override
     public void onActivityDestroyed(@NonNull Activity activity) {
-        activityStack.pop();
+        activityStack.remove(getActivityRecord(activity));
     }
 }
