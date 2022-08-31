@@ -1,15 +1,14 @@
 package com.github.jeffery.skin;
 
+import android.Manifest;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import android.Manifest;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-
 import java.io.File;
-import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             SkinManger.getInstance().setAppSkin(file12.getAbsolutePath());
             tvSkinName.setText(getCurrentSkinName());
         });
+        findViewById(R.id.btn_fragment).setOnClickListener(v -> startActivity(new Intent(v.getContext(), SecondActivity.class)));
         ActivityCompat.requestPermissions(this, new String[]{
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE

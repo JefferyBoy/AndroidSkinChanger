@@ -328,13 +328,6 @@ public class SkinManger extends SkinActivityLifecycleCallback {
     }
 
     @Override
-    public void onActivityPostCreated(@NonNull Activity activity, @Nullable Bundle savedInstanceState) {
-        super.onActivityPostCreated(activity, savedInstanceState);
-        // 应用皮肤到本界面
-        reloadSkin(getActivityRecord(activity));
-    }
-
-    @Override
     public void onActivityResumed(@NonNull Activity activity) {
         super.onActivityResumed(activity);
         // 皮肤包变化后，重新加载本页的皮肤资源
