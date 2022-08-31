@@ -22,36 +22,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/bg_button"
-        android:text="默认皮肤"
-        android:textColor="@color/buttonTextColor" />
+        android:text="默认皮肤" />
 
     <Button
         android:id="@+id/btn_gray_skin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@drawable/bg_button"
-        android:text="儒雅灰"
-        android:textColor="@color/buttonTextColor" />
+        android:text="儒雅灰" />
 
     <Button
         android:id="@+id/btn_red_skin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@drawable/bg_button"
-        android:text="高贵红"
-        android:textColor="@color/buttonTextColor" />
+        android:text="高贵红" />
 
     <Button
         android:id="@+id/btn_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@drawable/bg_button"
-        android:text="Fragment测试"
-        android:textColor="@color/buttonTextColor" />
+        android:text="Fragment测试" />
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"

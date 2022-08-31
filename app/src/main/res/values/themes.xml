@@ -13,10 +13,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/colorWindowBackground</item>
+        <item name="android:buttonStyle">@style/ButtonStyle</item>
     </style>
 
-    <style name="ButtonStyle" parent="TextAppearance.AppCompat.Button">
-        <item name="android:textColor">@color/black</item>
-        <item name="background">@drawable/bg_button</item>
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_button</item>
+        <item name="android:textColor">@color/buttonTextColor</item>
     </style>
 </resources>

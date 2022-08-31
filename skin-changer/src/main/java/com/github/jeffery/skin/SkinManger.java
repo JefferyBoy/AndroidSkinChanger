@@ -19,6 +19,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.core.util.Pair;
 import androidx.core.view.LayoutInflaterCompat;
 
 import java.io.File;
@@ -47,16 +48,33 @@ public class SkinManger extends SkinActivityLifecycleCallback {
 
     private static final String RES_TYPE_NAME_COLOR = "color";
     private static final String RES_TYPE_NAME_DRAWABLE = "drawable";
-    private static final String ATTR_NAME_SRC = "src";
-    private static final String ATTR_NAME_TEXT_COLOR = "textColor";
-    private static final String ATTR_NAME_BACKGROUND = "background";
-    private static final String ATTR_NAME_DRAWABLE_START = "drawableStart";
-    private static final String ATTR_NAME_DRAWABLE_LEFT = "drawableLeft";
-    private static final String ATTR_NAME_DRAWABLE_TOP = "drawableTop";
-    private static final String ATTR_NAME_DRAWABLE_RIGHT = "drawableRight";
-    private static final String ATTR_NAME_DRAWABLE_END = "drawableEnd";
-    private static final String ATTR_NAME_DRAWABLE_BOTTOM = "drawableBottom";
 
+    public static final String ATTR_NAME_SRC = "src";
+    public static final String ATTR_NAME_TEXT_COLOR = "textColor";
+    public static final String ATTR_NAME_BACKGROUND = "background";
+    public static final String ATTR_NAME_DRAWABLE_START = "drawableStart";
+    public static final String ATTR_NAME_DRAWABLE_LEFT = "drawableLeft";
+    public static final String ATTR_NAME_DRAWABLE_TOP = "drawableTop";
+    public static final String ATTR_NAME_DRAWABLE_RIGHT = "drawableRight";
+    public static final String ATTR_NAME_DRAWABLE_END = "drawableEnd";
+    public static final String ATTR_NAME_DRAWABLE_BOTTOM = "drawableBottom";
+    /**
+     * 布局属性名和属性ID的一一对应
+     */
+    public static final Pair<String, Integer>[] ATTR_STYLE_RESOURCES = new Pair[]{
+        new Pair(ATTR_NAME_BACKGROUND, android.R.attr.background),
+        new Pair(ATTR_NAME_TEXT_COLOR, android.R.attr.textColor),
+        new Pair(ATTR_NAME_SRC, android.R.attr.src),
+        new Pair(ATTR_NAME_DRAWABLE_LEFT, android.R.attr.drawableLeft),
+        new Pair(ATTR_NAME_DRAWABLE_START, android.R.attr.drawableStart),
+        new Pair(ATTR_NAME_DRAWABLE_TOP, android.R.attr.drawableTop),
+        new Pair(ATTR_NAME_DRAWABLE_RIGHT, android.R.attr.drawableRight),
+        new Pair(ATTR_NAME_DRAWABLE_END, android.R.attr.drawableEnd),
+        new Pair(ATTR_NAME_DRAWABLE_BOTTOM, android.R.attr.drawableBottom),
+    };
+    /**
+     * 所有支持换肤的属性名
+     */
     private final Set<String> attrSet = new HashSet<>();
 
     private SkinManger() {

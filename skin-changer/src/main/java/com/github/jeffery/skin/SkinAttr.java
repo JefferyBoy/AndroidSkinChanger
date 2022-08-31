@@ -5,10 +5,25 @@ package com.github.jeffery.skin;
  * @date 2022/8/28
  */
 public class SkinAttr {
+    /**
+     * 原app中的资源ID
+     */
     private int originResId;
+    /**
+     * 皮肤app中的资源ID
+     */
     private int skinResId;
+    /**
+     * 资源类型
+     */
     private String skinResType;
+    /**
+     * 资源名称
+     */
     private String skinResEntryName;
+    /**
+     * 属性名称
+     */
     private String attrName;
 
     public int getOriginResId() {
